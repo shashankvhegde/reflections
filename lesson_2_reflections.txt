@@ -1,0 +1,47 @@
+What happens when you initialize a repository? Why do you need to do it?
+
+	When you initialize a repository, we are basically setting up an environment which we want to be tracked
+	using Git version control system. So, we can add related files to it if we want them to be tracked as a 
+	group by Git.
+	We need it to keep track of related files as a group. In coding projects, many a times there are multiple files
+	which are dependent on one another so tracking them together makes sense. To enable such a grouping, there exists 
+	repository i.e an environment that we define to be able to track a bunch of dependent files. 
+
+How is the staging area different from the working directory and the repository? What value do you think it offers?
+
+	Staging area is an intermediate buffer used by git to hold files which are to be committed. User can't directly operate on
+	the staging area;only git can.
+	Staging area allows the user to add whichever files in the directory he/she wants to the repository as a commit
+	and leave the rest of them.	This flexibility provided makes the presence of staging area important.
+
+How can you use the staging area to make sure you have one commit per logical change?
+
+	We can add all the changes made after the last commit to the staging area. It will thus represent your working set (sort of) so far and thus a logical change more or less. You can manually add all the related changes you made to the staging area and then commit them.Thus, the presence of staging area helps us to make sure that we have one commit per logical change. 
+
+What are some situations when branches would be helpful in keeping your history organized? How would branches help?
+
+	A single branch is sufficient when the changes are minimal such as bug fixes, adding new features to the main functionality, updating documentation, etc.
+	However, to make new experimental versions of the existing software(say) which significantly differs in functionality from the main functionality, it is cleaner to make a new branch independent of the existing branch which might grow too independently. 
+	Creating a new branch is like context-switch.
+
+How do the diagrams help you visualize the branch structure?
+
+	We can quickly determine for ourselves :
+	1.Which commit belongs to which branch ?
+	2.The commit heirearchy.
+	3.Reachability.
+
+What is the result of merging two branches together? Why do we represent it in the diagram the way we do?
+
+	All the code is merged in an appropriate manner so that the new commit after merge is meaningful.
+	Representation in diagram helps in realizing that the new commit formed has 2 parents one to each of its parent branch.
+
+What are the pros and cons of Git’s automatic merging vs. always doing merges manually?
+
+	Pros:
+	1.Convenient.
+	2.Always correct.
+
+	Cons:
+	1.Not completely intelligent. Git asks for help for comflicts which seem simpler.
+	2.It is not completely automatic. Some manual merging is required anyways.
